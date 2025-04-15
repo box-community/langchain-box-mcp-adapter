@@ -36,6 +36,7 @@ async def main():
     memory = MemorySaver()
     chat_id = uuid.uuid4()
     config = {"configurable": {"thread_id": str(chat_id)}}
+    print()
 
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(read, write) as session:

@@ -14,7 +14,6 @@ This sample project implements the Langchain MCP adapter to the Box MCP server. 
 
 - Python 3.13 or higher
 - Dependencies listed in `pyproject.toml`:
-  - `box-ai-agents-toolkit>=0.0.38`
   - `langchain-mcp-adapters>=0.0.8`
   - `langchain-openai>=0.3.12`
   - `langgraph>=0.3.29`

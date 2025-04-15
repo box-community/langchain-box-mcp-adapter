@@ -24,32 +24,6 @@ wheels = [
 ]
 
 [[package]]
-name = "box-ai-agents-toolkit"
-version = "0.0.38"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "box-sdk-gen" },
-    { name = "python-dotenv" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/cb/80/1c1fd187872e171e3fc4a47962da93bad5d849afd853a90147ee1538cd4c/box_ai_agents_toolkit-0.0.38.tar.gz", hash = "sha256:7f262d665aee86342b99db12ac69a6ffc2b2d8b4cd0cb8829efb13ad164e54e8", size = 25408 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/38/c0/9f7a6e0afe21964c9408982c737f5388a141ffcc48145d2023956b02df38/box_ai_agents_toolkit-0.0.38-py3-none-any.whl", hash = "sha256:69c09034e790dede33c1574b50e3ee60f87e3b28f6364a0d5416207e49e1d05d", size = 13967 },
-]
-
-[[package]]
-name = "box-sdk-gen"
-version = "1.13.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "requests" },
-    { name = "requests-toolbelt" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/c8/74/108444b017ade32194f5307a1e7519759d4c92775138d7afe23530b19711/box_sdk_gen-1.13.0.tar.gz", hash = "sha256:e1f2aa2ed28d113c1f742bc1bad0f65b23c9fd2eb1b0a942febc8c4c5843d075", size = 236485 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e5/75/02284d5e54bb4a79add7c27cad34f4fe141853baa309d9b5470451dfedff/box_sdk_gen-1.13.0-py3-none-any.whl", hash = "sha256:620dc71effe349af25f3764d4cc03114dfa662448ab1883989a65f6a2d04cf66", size = 479235 },
-]
-
-[[package]]
 name = "certifi"
 version = "2025.1.31"
 source = { registry = "https://pypi.org/simple" }
@@ -245,7 +219,6 @@ name = "langchain-box-mcp-adapter"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "box-ai-agents-toolkit" },
     { name = "langchain-mcp-adapters" },
     { name = "langchain-openai" },
     { name = "langgraph" },
@@ -260,7 +233,6 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "box-ai-agents-toolkit", specifier = ">=0.0.38" },
     { name = "langchain-mcp-adapters", specifier = ">=0.0.8" },
     { name = "langchain-openai", specifier = ">=0.3.12" },
     { name = "langgraph", specifier = ">=0.3.29" },

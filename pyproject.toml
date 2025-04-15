@@ -5,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "box-ai-agents-toolkit>=0.0.38",
     "langchain-mcp-adapters>=0.0.8",
     "langchain-openai>=0.3.12",
     "langgraph>=0.3.29",

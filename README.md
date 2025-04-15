@@ -33,6 +33,18 @@ This sample project implements the Langchain MCP adapter to the Box MCP server. 
     uv sync
     ```
 
+3. Create a `.env` file in the root of the project and fill in the information.
+```yaml
+LANGSMITH_TRACING = "true"
+LANGSMITH_API_KEY =
+OPENAI_API_KEY =
+
+BOX_CLIENT_ID = ""
+BOX_CLIENT_SECRET = ""
+BOX_SUBJECT_TYPE = "user"
+BOX_SUBJECT_ID = ""
+```
+
 3. Ensure the MCP server is set up and accessible at the specified path in the project.
 
 

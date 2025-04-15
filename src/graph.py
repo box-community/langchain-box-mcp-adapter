@@ -12,9 +12,6 @@ async def make_graph():
     async with MultiServerMCPClient(
         {
             "box_mcp": {
-                # "command": "python",
-                # # Make sure to update to the full absolute path to your math_server.py file
-                # "args": ["/path/to/math_server.py"],
                 "command": "uv",
                 "args": [
                     "--directory",

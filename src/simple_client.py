@@ -22,10 +22,7 @@ async def main():
     model = ChatOpenAI(model="gpt-4o")
 
     server_params = StdioServerParameters(
-        # command="python",
         command="uv",
-        # Make sure to update to the full absolute path to your math_server.py file
-        # args=["/path/to/math_server.py"],
         args=[
             "--directory",
             "/Users/rbarbosa/Documents/code/python/box/mcp-server-box",
@@ -40,17 +37,10 @@ async def main():
 
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(read, write) as session:
-            # Initialize the connection
             await session.initialize()
-
-            # Get tools
             tools = await load_mcp_tools(session)
-
-            # Create and run the agent
             agent = create_react_agent(model, tools, checkpointer=memory)
 
-            # loop through user input
-            # print("Enter 'exit' to quit.")
             history_index = 0
             while True:
                 user_input = prompt_user("Prompt (exit to quit)")
@@ -61,10 +51,10 @@ async def main():
                 agent_response = await agent.ainvoke(
                     {"messages": user_input}, config=config
                 )
+
                 # print(agent_response)
                 messages = agent_response.get("messages", [])
                 for message in messages[history_index:]:
-                    # use different prints depending on message object type
                     if isinstance(message, HumanMessage):
                         print_human_message(message)
                     elif isinstance(message, AIMessage):
@@ -73,11 +63,8 @@ async def main():
                         print_tool_message(message)
                     else:
                         print_markdown(f"**Unknown message type:** {type(message)}")
-                    # print(type(message))
-                    # print_markdown(message.content)
                     history_index += 1
                     print_markdown("---")
-                # history_index = len(messages - 1)
 
 
 if __name__ == "__main__":

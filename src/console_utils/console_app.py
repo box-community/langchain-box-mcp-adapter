@@ -15,10 +15,7 @@ def print_markdown(text: str) -> None:
     Args:
         text (str): The text to print as markdown.
     """
-    # Create a Markdown object
     md = Markdown(text)
-
-    # Print the markdown text
     console.print(md)
 
 
@@ -63,10 +60,10 @@ def print_ai_message(ai_message: AIMessage):
 
 def print_tool_message(tool_message: ToolMessage):
     """
-    Print the AI message in the console.
+    Print the Tool message in the console.
 
     Args:
-        ai_message (AIMessage): The AI message to print.
+        tool_message (ToolMessage): The Tool message to print.
     """
     print_markdown("**Tool:**")
 
@@ -82,10 +79,10 @@ def print_tool_message(tool_message: ToolMessage):
 
 def print_human_message(human_message: HumanMessage):
     """
-    Print the AI message in the console.
+    Print the Human message in the console.
 
     Args:
-        ai_message (AIMessage): The AI message to print.
+        human_message (HumanMessage): The Human message to print.
     """
     print_markdown("**Human:**")
 
